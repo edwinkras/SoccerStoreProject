@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   imports: [],
-  selector: 'app-jerseys',
-  styleUrl: './jerseys.scss',
-  templateUrl: './jerseys.html',
+  selector: 'app-cleats',
+  styleUrl: './cleats.scss',
+  templateUrl: './cleats.html',
 })
-export class Jerseys {
-  jerseys = [
+export class Cleats {
+  cleats = [
     { id: 1, name: '1' },
     { id: 2, name: '2' },
     { id: 3, name: '3' },
