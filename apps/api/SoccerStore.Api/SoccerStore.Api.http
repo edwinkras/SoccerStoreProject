@@ -1,0 +1,6 @@
+@SoccerStore.Api_HostAddress = http://localhost:5041
+
+GET {{SoccerStore.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
