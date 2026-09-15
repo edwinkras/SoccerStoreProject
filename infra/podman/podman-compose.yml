@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: docker.io/library/postgres:16
+    container_name: soccerstore-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-soccerstore}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-soccerstore_dev_pw}
+      POSTGRES_DB: ${POSTGRES_DB:-soccerstore}
+    ports:
+      - "5432:5432"
+    volumes:
+      - soccerstore-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-soccerstore}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ../../apps/api
+      dockerfile: Containerfile
+    container_name: soccerstore-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__StoreDatabase: "Host=postgres;Port=5432;Database=${POSTGRES_DB:-soccerstore};Username=${POSTGRES_USER:-soccerstore};Password=${POSTGRES_PASSWORD:-soccerstore_dev_pw}"
+    ports:
+      - "8080:8080"
+
+volumes:
+  soccerstore-pgdata:
