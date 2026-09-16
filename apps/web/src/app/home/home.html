@@ -5,8 +5,8 @@
 </section>
 
 <nav class="departments" aria-label="Shop by department">
-  <a
-    *ngFor="let section of sections; let i = index"
+
+    <a *ngFor="let section of sections; let i = index"
     class="department"
     [class.department--ball]="!section.image"
     [routerLink]="section.path"
@@ -18,5 +18,5 @@
     ></span>
     <span class="department__label">{{ section.label }}</span>
     <span class="department__note">{{ section.note }}</span>
-  </a>
+</a>
 </nav>
