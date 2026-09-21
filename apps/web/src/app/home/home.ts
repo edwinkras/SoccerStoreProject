@@ -26,7 +26,7 @@ export class Home {
       label: 'Balls',
       path: '/balls',
       note: 'Match balls in every regulation size.',
-      image: null,
+      image: '/balls.jpg',
     },
   ];
 }

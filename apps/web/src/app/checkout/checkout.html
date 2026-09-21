@@ -1,0 +1,63 @@
+<nav class="navbar d-flex justify-content-center">
+  <ul class="navbar-nav flex-row gap-3">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Go Back to Home Page</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="#">-</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/cleats">Cleats</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/jerseys">Jerseys</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/balls">Balls</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container d-flex flex-column gap-4 w-75">
+  <h1 class="checkout">Checkout</h1>
+  <form>
+    <div class="row">
+      <label class="above-input" for="names">Name</label>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="above-input" for="email">Email</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+      <label class="above-input" for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+  </form>
+  <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+  data-bs-target="#popUp">Pay</button>
+</div>
+
+<div class="modal fade" id="popUp" tabindex="-1" aria-labelledby="popUpLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="popModal">Purchase completed!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Go play in the field now! ⚽
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+        <a href="/" class="btn btn-primary">Go to Home Page</a>
+        <!--<button type="button" class="btn btn-primary">GO back home</button>-->
+      </div>
+    </div>
+  </div>
+</div>

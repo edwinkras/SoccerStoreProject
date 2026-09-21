@@ -48,9 +48,7 @@ Thumbs.db
 
 __screenshots__/
 
-# .NET build output
-bin/
-obj/
-
-# Environment secrets
-.env
+# .NET / Visual Studio
+.vs/
+**/bin/
+**/obj/
