@@ -1,0 +1,22 @@
+<section class="pitch">
+  <p class="kicker">Est. this season</p>
+  <h1>Scorer</h1>
+  <p class="lede">Gear up from boot to chest. Pick a section below.</p>
+</section>
+
+<nav class="departments" aria-label="Shop by department">
+
+    <a *ngFor="let section of sections; let i = index"
+    class="department"
+    [class.department--ball]="!section.image"
+    [routerLink]="section.path"
+  >
+    <span class="department__index">{{ (i + 1).toString().padStart(2, '0') }}</span>
+    <span
+      class="department__art"
+      [style.background-image]="section.image ? 'url(' + section.image + ')' : null"
+    ></span>
+    <span class="department__label">{{ section.label }}</span>
+    <span class="department__note">{{ section.note }}</span>
+</a>
+</nav>

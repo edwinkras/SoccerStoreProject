@@ -1,0 +1,27 @@
+<nav class="navbar d-flex justify-content-center">
+  <ul class="navbar-nav flex-row gap-3">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/jerseys">Jerseys</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/cleats">Cleats</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="d-flex justify-content-center pt-5 gap-5">
+  @for (ball of balls; track ball.id) {
+  <div class="card" style="width: 18rem;">
+    <img class="rounded-4 img-fluid" src="/balls.jpg" alt="Balls">
+    <div class="card-body">
+      <h5 class="card-title">{{ ball.name }}</h5>
+      <p class="card-text">A soccer ball</p>
+      <a routerLink="/checkout" class="btn btn-primary">Buy it</a>
+    </div>
+  </div>
+  }
+</div>
+

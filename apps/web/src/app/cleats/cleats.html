@@ -1,0 +1,26 @@
+<nav class="navbar d-flex justify-content-center">
+  <ul class="navbar-nav flex-row gap-3">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/jerseys">Jerseys</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/balls">Balls</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="d-flex justify-content-center pt-5 gap-5">
+  @for (cleat of cleats; track cleat.id) {
+  <div class="card" style="width: 18rem;">
+    <img class="rounded-4 img-fluid" src="/cleats.jpg" alt="Cleats">
+    <div class="card-body">
+      <h5 class="card-title">{{ cleat.name }}</h5>
+      <p class="card-text">Cleats for soccer</p>
+      <a routerLink="/checkout" class="btn btn-primary">Buy it</a>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,21 @@
+//:host {
+//  display: block;
+//  min-height: 100vh;
+//  background: #0e2a1f;
+//}
+
+.card {
+  background-color: rgba(60, 214, 132, 1);
+  box-shadow: 0px 0px 26px 6px rgba(13, 77, 24, 1);
+}
+
+.navbar {
+  background-color: #34402F;
+  height: 90px;
+}
+
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #B6D9BF;
+  text-shadow: #00E09D 1px 0 15px;
+}
